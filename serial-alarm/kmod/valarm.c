@@ -245,9 +245,13 @@ static int __init valarm_init(void)
 			return v->virq;
 		irq_set_chip_and_handler_name(v->virq, &valarm_chip,
 					      handle_simple_irq, "valarm");
+		pr_info("valarm%d: refs after irq_alloc/set_chip = %d\n",
+			i, module_refcount(THIS_MODULE));
 		ret = request_irq(v->virq, valarm_irq_handler, 0, "valarm", v);
 		if (ret)
 			return ret;
+		pr_info("valarm%d: refs after request_irq = %d\n",
+			i, module_refcount(THIS_MODULE));
 
 		hrtimer_init(&v->timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
 		v->timer.function = valarm_burst_fn;
@@ -259,10 +263,13 @@ static int __init valarm_init(void)
 		ret = misc_register(&v->misc);
 		if (ret)
 			return ret;
+		pr_info("valarm%d: refs after misc_register = %d\n",
+			i, module_refcount(THIS_MODULE));
 
 		dev_info(v->misc.this_device,
 			 "valarm%d ready: regs=%px virq=%d\n", i, v->regs, v->virq);
 	}
+	pr_info("valarm: init done, refs = %d\n", module_refcount(THIS_MODULE));
 	return 0;
 }
 

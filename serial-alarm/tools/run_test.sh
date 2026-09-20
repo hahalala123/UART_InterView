@@ -12,7 +12,21 @@ LOG="/tmp/alarmd.log"
 CSV="/tmp/alarm_latency.csv"
 
 echo "== insmod valarm =="
-if ! sudo rmmod valarm 2>/dev/null; then true; fi
+# 清理可能残留的模块 (上次测试中断时 rmmod 未执行)
+sudo rmmod valarm 2>/dev/null || true
+for _ in 1 2 3 4 5; do
+	lsmod | grep -q "^valarm" || break
+	sleep 0.5
+done
+if lsmod | grep -q "^valarm"; then
+	echo "warn: normal rmmod failed, trying rmmod -f"
+	sudo rmmod -f valarm 2>/dev/null || true
+	sleep 0.5
+fi
+if lsmod | grep -q "^valarm"; then
+	echo "FAIL: valarm still loaded, check 'lsmod | grep valarm'"
+	exit 1
+fi
 sudo insmod "$DIR/kmod/valarm.ko"
 sleep 1
 ls -l /dev/valarm0 /dev/valarm1
