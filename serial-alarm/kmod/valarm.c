@@ -107,21 +107,24 @@ static void valarm_inject(struct valarm *v, u8 byte)
 
 	atomic_inc(&v->injected);
 	/*
+	atomic_inc(&v->injected);
+	/*
 	 * generic_handle_irq_safe() 为 5.11+ 接口; 5.10 及更早用
 	 * generic_handle_irq() 并自行关中断, 语义等价 (该路径可能在
 	 * 中断上下文被 hrtimer 调用, 关中断防止嵌套触发虚拟 IRQ)。
+	 * virq < 0 表示 IRQ 诊断通道已降级禁用, 跳过。
 	 */
+	if (v->virq >= 0) {
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0)
-	generic_handle_irq_safe(v->virq);
+		generic_handle_irq_safe(v->virq);
 #else
-	{
 		unsigned long flags;
 
 		local_irq_save(flags);
 		generic_handle_irq(v->virq);
 		local_irq_restore(flags);
-	}
 #endif
+	}
 }
 
 /* ---- 突发注入器: hrtimer 模拟警报器按间隔连发 ---- */
@@ -239,27 +242,36 @@ static int __init valarm_init(void)
 			return -ENOMEM;
 		v->regs = page_address(v->page);
 
-		/* 虚拟 IRQ 初始化 */
+		/* 虚拟 IRQ 初始化 (可选, 方案 D5 诊断通道, 不参与热路径) */
 		/*
-		 * 必须传 NULL owner 而非用 irq_alloc_desc() 宏:
+		 * owner 必须传 NULL 而非用 irq_alloc_desc() 宏:
 		 * 该宏默认给 desc->owner 填 THIS_MODULE, request_irq 会
 		 * 对其 try_module_get 使模块引用 +1; 而 free_irq 的
 		 * module_put 在模块 exit 中, exit 又因引用计数不为 0
 		 * 永远不会被调用 —— rmmod 永久死锁 (实测 refcnt=2)。
-		 * 传 NULL 后描述符不持有模块引用, 卸载路径畅通。
+		 * 部分加固内核对 NULL owner 的申请返回 EINVAL, 此时
+		 * 降级为禁用 IRQ 诊断 (仅损失 D5 中断计数演示, 不影响
+		 * 主测试路径), 保证模块可加载可卸载。
 		 */
 		v->virq = irq_alloc_descs(0, 1, numa_node_id(), NULL);
-		if (v->virq < 0)
-			return v->virq;
-		irq_set_chip_and_handler_name(v->virq, &valarm_chip,
-					      handle_simple_irq, "valarm");
-		pr_info("valarm%d: refs after irq_alloc/set_chip = %d\n",
-			i, module_refcount(THIS_MODULE));
-		ret = request_irq(v->virq, valarm_irq_handler, 0, "valarm", v);
-		if (ret)
-			return ret;
-		pr_info("valarm%d: refs after request_irq = %d\n",
-			i, module_refcount(THIS_MODULE));
+		if (v->virq < 0) {
+			pr_warn("valarm%d: irq_alloc_descs(NULL owner) failed: %d, "
+				"IRQ diagnostic disabled\n", i, v->virq);
+			v->virq = -1;
+		} else {
+			irq_set_chip_and_handler_name(v->virq, &valarm_chip,
+						      handle_simple_irq, "valarm");
+			ret = request_irq(v->virq, valarm_irq_handler, 0,
+					  "valarm", v);
+			if (ret) {
+				pr_warn("valarm%d: request_irq failed: %d, "
+					"IRQ diagnostic disabled\n", i, ret);
+				irq_free_desc(v->virq);
+				v->virq = -1;
+			}
+		}
+		pr_info("valarm%d: virq=%d refs=%d\n",
+			i, v->virq, module_refcount(THIS_MODULE));
 
 		hrtimer_init(&v->timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
 		v->timer.function = valarm_burst_fn;
@@ -271,8 +283,6 @@ static int __init valarm_init(void)
 		ret = misc_register(&v->misc);
 		if (ret)
 			return ret;
-		pr_info("valarm%d: refs after misc_register = %d\n",
-			i, module_refcount(THIS_MODULE));
 
 		dev_info(v->misc.this_device,
 			 "valarm%d ready: regs=%px virq=%d\n", i, v->regs, v->virq);
@@ -290,8 +300,10 @@ static void __exit valarm_exit(void)
 
 		hrtimer_cancel(&v->timer);
 		misc_deregister(&v->misc);
-		free_irq(v->virq, v);
-		irq_free_desc(v->virq);
+		if (v->virq >= 0) {
+			free_irq(v->virq, v);
+			irq_free_desc(v->virq);
+		}
 		if (v->page)
 			__free_page(v->page);
 		kfree(v->misc.name);
