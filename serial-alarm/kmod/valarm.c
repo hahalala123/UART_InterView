@@ -240,7 +240,15 @@ static int __init valarm_init(void)
 		v->regs = page_address(v->page);
 
 		/* 虚拟 IRQ 初始化 */
-		v->virq = irq_alloc_desc(numa_node_id());
+		/*
+		 * 必须传 NULL owner 而非用 irq_alloc_desc() 宏:
+		 * 该宏默认给 desc->owner 填 THIS_MODULE, request_irq 会
+		 * 对其 try_module_get 使模块引用 +1; 而 free_irq 的
+		 * module_put 在模块 exit 中, exit 又因引用计数不为 0
+		 * 永远不会被调用 —— rmmod 永久死锁 (实测 refcnt=2)。
+		 * 传 NULL 后描述符不持有模块引用, 卸载路径畅通。
+		 */
+		v->virq = irq_alloc_descs(0, 1, numa_node_id(), NULL);
 		if (v->virq < 0)
 			return v->virq;
 		irq_set_chip_and_handler_name(v->virq, &valarm_chip,
