@@ -11,18 +11,20 @@
  *
  * 寄存器布局 (与用户态 user/uart_mmio.h 严格一致, 偏移单位 byte):
  *   0x00 RBR        [RO] 报警字节
- *   0x04 ACK        [WO] 用户态取数后写任意值, 清除 DR
- *                        (真实硬件读 RBR 自清; 模拟硬件需要显式 ack)
- *   0x05 LSR        [RO] bit0 = DR
+ *   0x04            保留
+ *   0x05 LSR        混合: bit0 = DR; 用户态取数后写 0 清除 DR
+ *                        (真实硬件读 RBR 自清 DR; 模拟硬件由用户态
+ *                        显式清, 内核注入侧为 |= DR 置位, 二者不冲突)
  *   0x08 INJECT_TS  [RO] u64, 注入时刻 ktime (ns) — 模拟硬件时间戳通道
- *   0x10 IRQ_CNT    [RO] u32, 内核慢路径中断计数 (诊断)
+ *   0x10 IRQ_CNT    [RO] u32, 内核慢路径计数 (诊断)
  *
  * 一致性说明: 用户态经 vm_insert_page 映射为普通缓存映射, 与内核
  * 侧 page_address 别名同为 WB 属性且访问同一物理地址; arm64 为
- * PIPT cache, 不存在别名不一致问题。不用 remap_pfn_range + 非缓存
- * 的原因: 部分厂商加固内核 (如华为 HCE) 禁止将普通 RAM 页 remap
- * 进用户态 (mmap 返回 EINVAL), vm_insert_page 是映射已分配页的
- * 标准 API。若移植到 VIPT 平台需重新评估缓存属性。
+ * PIPT cache, 不存在别名不一致问题。用 vm_insert_page 而非
+ * remap_pfn_range: 后者映射普通 RAM 页会被部分加固内核拒绝 (EINVAL),
+ * 且 vm_insert_page 自动处理页引用计数。若移植到 VIPT 平台需重新
+ * 评估缓存属性。注意 mmap 的 vma 按页取整, 长度检查须与 PAGE_SIZE
+ * 比较而非寄存器窗口大小。
  *
  * 接口:
  *   /dev/valarm0, /dev/valarm1        — mmap (寄存器窗口) + read (统计)

@@ -1,7 +1,7 @@
 /* uart_mmio.h — 虚拟 UART 寄存器布局与用户态 MMIO 访问 (方案 D1)
  *
  * 与内核驱动 kmod/valarm.c 的寄存器定义严格一致。
- * 热路径只访问 LSR / RBR / INJECT_TS / ACK 四个偏移。
+ * 热路径只访问 LSR / RBR / INJECT_TS 三个偏移。
  * 所有访问必须 volatile, 防止编译器把轮询循环优化掉。
  */
 #ifndef UART_MMIO_H
@@ -11,10 +11,10 @@
 
 /* 寄存器偏移 (byte) */
 #define UART_REG_RBR    0x00    /* [RO] 报警字节 */
-#define UART_REG_ACK    0x04    /* [WO] 取数后写任意值清 DR (模拟硬件) */
-#define UART_REG_LSR    0x05    /* [RO] bit0=DR */
+#define UART_REG_RSVD   0x04    /* 保留 (未用) */
+#define UART_REG_LSR    0x05    /* 混合: bit0=DR, 用户态写 0 清 DR */
 #define UART_REG_TS     0x08    /* [RO] u64 注入时间戳 (模拟硬件时间戳) */
-#define UART_REG_IRQCNT 0x10    /* [RO] u32 内核慢路径中断计数 (诊断) */
+#define UART_REG_IRQCNT 0x10    /* [RO] u32 内核慢路径计数 (诊断) */
 
 #define UART_LSR_DR (1u << 0)
 
@@ -40,10 +40,11 @@ static inline uint64_t uart_inject_ts(const uart_mmio_t *u)
 	return *(volatile uint64_t *)(u->base + UART_REG_TS);
 }
 
-/* 模拟硬件: 用户态读后显式清除 DR (真实硬件读 RBR 自清) */
+/* 模拟硬件: 真实硬件读 RBR 自动清 DR; 模拟硬件无人代处理 ACK 寄存器,
+ * 由用户态读数后直接写 LSR 清 DR (内核注入侧为 |= DR 置位, 二者不冲突) */
 static inline void uart_ack(const uart_mmio_t *u)
 {
-	*(volatile uint8_t *)(u->base + UART_REG_ACK) = 0;
+	*(volatile uint8_t *)(u->base + UART_REG_LSR) = 0;
 }
 
 #endif /* UART_MMIO_H */
