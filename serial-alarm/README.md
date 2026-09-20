@@ -16,7 +16,7 @@
 │ valarm.ko (misc 驱动)                               │
 │   ├─ 虚拟 UART0/1: RBR/LSR/INJECT_TS 寄存器页        │
 │   ├─ 报警器模拟: sysfs inject(单次) / burst(hrtimer 突发) │
-│   └─ 慢路径诊断: 虚拟 IRQ 计数 (方案 D5, 不进热路径) │
+│   └─ 慢路径诊断: 注入路径直接记账 (方案 D5, 不进热路径)     │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -91,7 +91,7 @@ serial-alarm/
 | D2 寄存器映射进用户态 | `valarm.ko` misc mmap（真实硬件对应 uio_pdrv_genirq + 设备树） |
 | D3 CPU 独占 | `mlockall` + `SCHED_FIFO 99` + `sched_setaffinity` |
 | D4 CNTPCT 时间戳 | `timestamp.h`（aarch64 用 `mrs cntpct_el0`，退化 vDSO） |
-| D5 内核慢路径诊断 | `valarm.ko` 虚拟 IRQ 计数，不参与热路径 |
+| D5 内核慢路径诊断 | `valarm.ko` 注入路径慢路径记账（原设计为虚拟 IRQ，因 HCE 内核 IRQ API 魔改 + desc->owner 卸载死锁风险改为直接记账） |
 | 5.6 突发背压 | `ring.h`（当前 hot path 内联 foo + 样本记录，`ring.h` 供拆分消费线程时使用） |
 | 7.1 双通道测量 | 通道一模拟：INJECT_TS 硬件时间戳；通道二：软件统计报告 |
 | 7.3 验收 | 字节序号连续性检查（零丢字节/零错序）+ 内核/用户态计数比对 |

@@ -31,7 +31,6 @@
  *   /sys/.../valarmN/stats   (RO)     — injected/acked/irq/loss 计数
  */
 #include <linux/module.h>
-#include <linux/version.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/miscdevice.h>
@@ -40,8 +39,6 @@
 #include <linux/gfp.h>
 #include <linux/ktime.h>
 #include <linux/hrtimer.h>
-#include <linux/irq.h>
-#include <linux/interrupt.h>
 #include <linux/sysfs.h>
 #include <linux/uaccess.h>
 #include <linux/slab.h>
@@ -62,36 +59,16 @@ struct valarm {
 	struct miscdevice misc;
 	struct page *page;
 	u8 *regs;                 /* 内核缓存别名 */
-	int virq;
 	struct hrtimer timer;
 	u32 burst_total;
 	u32 burst_sent;
 	u64 burst_interval_ns;
 	u8  next_byte;            /* 注入字节按序号递增, 供用户态查错序/丢字节 */
 	atomic_t injected;
-	atomic_t acked;
-	atomic_t irq_count;
+	atomic_t irq_count;       /* 慢路径诊断计数 (方案 D5) */
 };
 
 static struct valarm g_dev[VALARM_NDEV];
-
-/* ---- 虚拟 IRQ: 内核慢路径诊断 (方案 D5) ---- */
-
-static void virq_noop(struct irq_data *d) { }
-static struct irq_chip valarm_chip = {
-	.name         = "valarm",
-	.irq_mask     = virq_noop,
-	.irq_unmask   = virq_noop,
-	.irq_ack      = virq_noop,
-};
-
-static irqreturn_t valarm_irq_handler(int irq, void *dev_id)
-{
-	struct valarm *v = dev_id;
-	/* 慢路径诊断: 模拟内核串口中断处理 (统计用, 不参与热路径) */
-	*(u32 *)(v->regs + REG_IRQCNT) = (u32)atomic_inc_return(&v->irq_count);
-	return IRQ_HANDLED;
-}
 
 /* ---- 注入: 模拟"警报器发出 1 字节" ---- */
 
@@ -107,24 +84,14 @@ static void valarm_inject(struct valarm *v, u8 byte)
 
 	atomic_inc(&v->injected);
 	/*
-	atomic_inc(&v->injected);
-	/*
-	 * generic_handle_irq_safe() 为 5.11+ 接口; 5.10 及更早用
-	 * generic_handle_irq() 并自行关中断, 语义等价 (该路径可能在
-	 * 中断上下文被 hrtimer 调用, 关中断防止嵌套触发虚拟 IRQ)。
-	 * virq < 0 表示 IRQ 诊断通道已降级禁用, 跳过。
+	 * 内核慢路径诊断记账 (方案 D5): 真实系统中注入会触发串口 IRQ、
+	 * 由内核中断处理程序统计; 本模拟框架不注册真实中断 (华为 HCE
+	 * 内核魔改了 irq_alloc_descs 宏, 标准申请方式不可用; 且虚拟
+	 * 中断的 desc->owner 机制会导致模块 rmmod 死锁), 改为在注入
+	 * 路径直接累加同一计数器, 慢路径的可观测语义保持不变,
+	 * 且该记账不处于用户态热路径, 不影响延迟指标。
 	 */
-	if (v->virq >= 0) {
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0)
-		generic_handle_irq_safe(v->virq);
-#else
-		unsigned long flags;
-
-		local_irq_save(flags);
-		generic_handle_irq(v->virq);
-		local_irq_restore(flags);
-#endif
-	}
+	*(u32 *)(v->regs + REG_IRQCNT) = (u32)atomic_inc_return(&v->irq_count);
 }
 
 /* ---- 突发注入器: hrtimer 模拟警报器按间隔连发 ---- */
@@ -211,7 +178,12 @@ static int valarm_mmap(struct file *filp, struct vm_area_struct *vma)
 	struct miscdevice *misc = filp->private_data;
 	struct valarm *v = container_of(misc, struct valarm, misc);
 
-	if (vma->vm_end - vma->vm_start > VALARM_REGSZ)
+	/*
+	 * 注意: mmap 长度按页向上取整, 请求 0x100 字节时 vma 覆盖整页
+	 * (4096), 故与 PAGE_SIZE 比较而非 VALARM_REGSZ (曾因误用
+	 * VALARM_REGSZ 导致用户态 mmap 永远 EINVAL)。
+	 */
+	if (vma->vm_end - vma->vm_start > PAGE_SIZE)
 		return -EINVAL;
 	vma->vm_flags |= VM_DONTEXPAND | VM_DONTDUMP;
 	/*
@@ -242,37 +214,15 @@ static int __init valarm_init(void)
 			return -ENOMEM;
 		v->regs = page_address(v->page);
 
-		/* 虚拟 IRQ 初始化 (可选, 方案 D5 诊断通道, 不参与热路径) */
 		/*
-		 * owner 必须传 NULL 而非用 irq_alloc_desc() 宏:
-		 * 该宏默认给 desc->owner 填 THIS_MODULE, request_irq 会
-		 * 对其 try_module_get 使模块引用 +1; 而 free_irq 的
-		 * module_put 在模块 exit 中, exit 又因引用计数不为 0
-		 * 永远不会被调用 —— rmmod 永久死锁 (实测 refcnt=2)。
-		 * 部分加固内核对 NULL owner 的申请返回 EINVAL, 此时
-		 * 降级为禁用 IRQ 诊断 (仅损失 D5 中断计数演示, 不影响
-		 * 主测试路径), 保证模块可加载可卸载。
+		 * 内核慢路径诊断 (方案 D5) 说明: 真实系统中报警字节到达会触发
+		 * 串口 IRQ 并由内核中断统计; 本模拟框架不注册真实中断——
+		 * 华为 HCE 内核魔改了 irq_alloc_descs 宏 (固定 THIS_MODULE
+		 * 参数), 且虚拟中断的 desc->owner 机制会导致模块 rmmod
+		 * 死锁 (free_irq 的 module_put 在 exit 中, exit 因引用计数
+		 * 不为 0 永不运行)。慢路径统计改由 valarm_inject() 在注入时
+		 * 直接记账 (见该函数注释), 可观测语义不变, 不在用户态热路径。
 		 */
-		v->virq = irq_alloc_descs(0, 1, numa_node_id(), NULL);
-		if (v->virq < 0) {
-			pr_warn("valarm%d: irq_alloc_descs(NULL owner) failed: %d, "
-				"IRQ diagnostic disabled\n", i, v->virq);
-			v->virq = -1;
-		} else {
-			irq_set_chip_and_handler_name(v->virq, &valarm_chip,
-						      handle_simple_irq, "valarm");
-			ret = request_irq(v->virq, valarm_irq_handler, 0,
-					  "valarm", v);
-			if (ret) {
-				pr_warn("valarm%d: request_irq failed: %d, "
-					"IRQ diagnostic disabled\n", i, ret);
-				irq_free_desc(v->virq);
-				v->virq = -1;
-			}
-		}
-		pr_info("valarm%d: virq=%d refs=%d\n",
-			i, v->virq, module_refcount(THIS_MODULE));
-
 		hrtimer_init(&v->timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
 		v->timer.function = valarm_burst_fn;
 
@@ -285,7 +235,7 @@ static int __init valarm_init(void)
 			return ret;
 
 		dev_info(v->misc.this_device,
-			 "valarm%d ready: regs=%px virq=%d\n", i, v->regs, v->virq);
+			 "valarm%d ready: regs=%px\n", i, v->regs);
 	}
 	pr_info("valarm: init done, refs = %d\n", module_refcount(THIS_MODULE));
 	return 0;
@@ -300,10 +250,6 @@ static void __exit valarm_exit(void)
 
 		hrtimer_cancel(&v->timer);
 		misc_deregister(&v->misc);
-		if (v->virq >= 0) {
-			free_irq(v->virq, v);
-			irq_free_desc(v->virq);
-		}
 		if (v->page)
 			__free_page(v->page);
 		kfree(v->misc.name);
