@@ -1,7 +1,7 @@
 # 用户态驱动构建 (在 ARM 服务器上执行)
 CC      ?= gcc
-CFLAGS  ?= -O2 -Wall -Wextra -std=gnu11
-LDLIBS  ?= -lrt
+CFLAGS  ?= -O2 -Wall -Wextra -std=gnu11 -pthread
+LDLIBS  ?= -lrt -pthread
 
 all: alarmd libfoo/libfoo.so
 

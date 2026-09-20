@@ -35,6 +35,7 @@
 #include <sched.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#include <pthread.h>
 
 #include "uart_mmio.h"
 #include "timestamp.h"
@@ -44,7 +45,7 @@
 #define MAX_SAMPLES  (1u << 20)   /* 预分配, mlockall 后无页错误 */
 
 struct sample {
-	uint64_t lat;     /* t1 - t0 (ns) */
+	uint64_t lat;     /* t1 - t0 (ns), 已扣除时钟域偏移 */
 	uint64_t t0;
 	uint8_t  port;
 	uint8_t  byte;
@@ -57,6 +58,7 @@ static uart_mmio_t g_uarts[NPORTS];
 static uint8_t g_expected[NPORTS];
 static int g_have_expected[NPORTS];
 static uint64_t g_seq_err, g_overflow;
+static uint64_t g_ts_offset;      /* 用户时钟 - 内核 ktime 的常量偏移 */
 
 static void on_signal(int sig)
 {
@@ -68,6 +70,44 @@ static int cmp_u64(const void *a, const void *b)
 {
 	uint64_t x = *(const uint64_t *)a, y = *(const uint64_t *)b;
 	return (x > y) - (x < y);
+}
+
+/*
+ * 时钟域标定: INJECT_TS 锁存的是内核 ktime, ts_now_ns 是用户态时钟。
+ * 虚拟化环境下二者可相差一个由 Hypervisor 设置的常量偏移 (鲲鹏 ECS
+ * 实测约 0.84 s)。标定方法: 一个线程经 sysfs 注入哑字节, 主线程忙等
+ * INJECT_TS 跳变并在同一轮询周期内读用户时钟, 误差约一个轮询周期
+ * (<0.5 us), 标定完成后线程退出, 不进热路径。
+ */
+static void *calib_inject_thread(void *arg)
+{
+	const char *path = arg;
+	int fd = open(path, O_WRONLY);
+
+	if (fd >= 0) {
+		(void)write(fd, "0\n", 2);
+		close(fd);
+	}
+	return NULL;
+}
+
+static uint64_t calibrate_offset(int port)
+{
+	char path[64];
+	pthread_t th;
+	uint64_t prev, t0, t1;
+
+	snprintf(path, sizeof(path), "/sys/class/misc/valarm%d/inject", port);
+	uart_ack(&g_uarts[port]);
+	prev = uart_inject_ts(&g_uarts[port]);
+	if (pthread_create(&th, NULL, calib_inject_thread, path) != 0)
+		return 0;
+	while ((t0 = uart_inject_ts(&g_uarts[port])) == prev)
+		;
+	t1 = ts_now_ns();
+	uart_ack(&g_uarts[port]);
+	pthread_join(th, NULL);
+	return t1 - t0;
 }
 
 static void report_and_save(const char *csv)
@@ -189,6 +229,11 @@ int main(int argc, char **argv)
 	foo(0, 0, 0);
 	foo(1, 0, 0);
 
+	/* 5) 时钟域标定 (虚拟化环境用户时钟与内核 ktime 有常量偏移) */
+	g_ts_offset = calibrate_offset(0);
+	printf("clock domain offset: %llu ns\n",
+	       (unsigned long long)g_ts_offset);
+
 	sigaction(SIGINT, &sa, NULL);
 	sigaction(SIGUSR1, &sa, NULL);
 	printf("alarmd ready: polling %s %s on cpu%d (SIGUSR1/SIGINT to "
@@ -201,7 +246,7 @@ int main(int argc, char **argv)
 			if (uart_lsr(&g_uarts[i]) & UART_LSR_DR) {
 				uint8_t  b  = uart_rbr(&g_uarts[i]);
 				uint64_t t0 = uart_inject_ts(&g_uarts[i]);
-				uint64_t t1 = ts_now_ns();
+				uint64_t t1 = ts_now_ns() - g_ts_offset;
 				uart_ack(&g_uarts[i]);
 
 				foo(i, b, t0);
