@@ -15,7 +15,8 @@
  *   0x05 LSR        混合: bit0 = DR; 用户态取数后写 0 清除 DR
  *                        (真实硬件读 RBR 自清 DR; 模拟硬件由用户态
  *                        显式清, 内核注入侧为 |= DR 置位, 二者不冲突)
- *   0x08 INJECT_TS  [RO] u64, 注入时刻 (ns, CNTVCT 域, 与 vDSO 同源)
+ *   0x08 INJECT_TS  [RO] u64, 注入时刻 (ns, CLOCK_MONOTONIC_RAW 域,
+ *                        与用户态 vDSO 同源)
  *   0x10 IRQ_CNT    [RO] u32, 内核慢路径计数 (诊断)
  *
  * 一致性说明: 用户态经 vm_insert_page 映射为普通缓存映射, 与内核
@@ -71,21 +72,19 @@ struct valarm {
 };
 
 static struct valarm g_dev[VALARM_NDEV];
-static u64 g_cntfrq;          /* CNTFRQ_EL1, init 时读取一次 */
 
 /*
- * 时间戳统一到时钟源 CNTVCT (与 vDSO 同源):
- * 用户态 CLOCK_MONOTONIC_RAW 经 vDSO 读 cntvct_el0, 内核模块在 EL1
- * 直接读 cntvct_el1 —— 同一计数器, 两个时钟域完全一致。不能用
- * ktime_get_ns(): 云虚拟化环境下 ktime (MONOTONIC 域, 含时钟微调)
- * 与 MONOTONIC_RAW 之差非恒定, 标定后仍漂移 (鲲鹏 ECS 实测数十 us)。
+ * 时间戳统一到 CLOCK_MONOTONIC_RAW 域:
+ * ktime_get_raw_ns() 是内核侧 MONOTONIC_RAW (timekeeping raw 基准),
+ * 用户态 vDSO clock_gettime(CLOCK_MONOTONIC_RAW) 与之同源同速。
+ * 不能用 ktime_get_ns(): 那是 MONOTONIC 域, 含 NTP/steering 调整,
+ * 与 RAW 域之差非恒定 (鲲鹏 ECS 实测基线偏移 ~0.84 s 且持续漂移)。
+ * (注: 曾考虑内核 mrs 读 cntvct_el1, 但 HCE 工具链汇编器不认该
+ * 系统寄存器名, 放弃。)
  */
 static u64 valarm_now_ns(void)
 {
-	u64 cntvct;
-
-	asm volatile("mrs %0, cntvct_el1" : "=r"(cntvct));
-	return (u64)(((__uint128_t)cntvct * 1000000000ull) / g_cntfrq);
+	return ktime_get_raw_ns();
 }
 
 /* ---- 注入: 模拟"警报器发出 1 字节" ---- */
@@ -224,11 +223,7 @@ static int __init valarm_init(void)
 {
 	int i, ret;
 
-	asm volatile("mrs %0, cntfrq_el1" : "=r"(g_cntfrq));
-	if (!g_cntfrq)
-		return -ENODEV;
-	pr_info("valarm: cntfrq=%llu Hz, timestamp domain = CNTVCT\n",
-		(unsigned long long)g_cntfrq);
+	pr_info("valarm: timestamp domain = CLOCK_MONOTONIC_RAW (ktime_get_raw_ns)\n");
 
 	for (i = 0; i < VALARM_NDEV; i++) {
 		struct valarm *v = &g_dev[i];
