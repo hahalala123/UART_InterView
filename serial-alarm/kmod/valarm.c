@@ -28,6 +28,7 @@
  *   /sys/.../valarmN/stats   (RO)     — injected/acked/irq/loss 计数
  */
 #include <linux/module.h>
+#include <linux/version.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/miscdevice.h>
@@ -102,7 +103,22 @@ static void valarm_inject(struct valarm *v, u8 byte)
 	v->regs[REG_LSR] |= LSR_DR;
 
 	atomic_inc(&v->injected);
+	/*
+	 * generic_handle_irq_safe() 为 5.11+ 接口; 5.10 及更早用
+	 * generic_handle_irq() 并自行关中断, 语义等价 (该路径可能在
+	 * 中断上下文被 hrtimer 调用, 关中断防止嵌套触发虚拟 IRQ)。
+	 */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0)
 	generic_handle_irq_safe(v->virq);
+#else
+	{
+		unsigned long flags;
+
+		local_irq_save(flags);
+		generic_handle_irq(v->virq);
+		local_irq_restore(flags);
+	}
+#endif
 }
 
 /* ---- 突发注入器: hrtimer 模拟警报器按间隔连发 ---- */
