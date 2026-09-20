@@ -11,7 +11,7 @@
 ┌────────────────────── 用户态 ──────────────────────┐
 │ alarmd (SCHED_FIFO 99, 绑核, mlockall, 预热 PLT)    │
 │   热循环: lsr&DR → rbr → inject_ts → ack → foo()   │
-│        mmap (/dev/valarm0, /dev/valarm1, 非缓存)    │
+│        mmap (/dev/valarm0, /dev/valarm1, vm_insert_page)  │
 ├────────────────────── 内核态 ──────────────────────┤
 │ valarm.ko (misc 驱动)                               │
 │   ├─ 虚拟 UART0/1: RBR/LSR/INJECT_TS 寄存器页        │

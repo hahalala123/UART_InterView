@@ -17,9 +17,12 @@
  *   0x08 INJECT_TS  [RO] u64, 注入时刻 ktime (ns) — 模拟硬件时间戳通道
  *   0x10 IRQ_CNT    [RO] u32, 内核慢路径中断计数 (诊断)
  *
- * 一致性说明: 用户态映射为 pgprot_noncached (模拟设备内存强序访问);
- * 内核侧经 page_address 缓存别名写。arm64 为 PIPT cache, 物理地址同
- * 一不会读到陈旧数据; 若移植到 VIPT 平台需改为 io 映射 + 显式同步。
+ * 一致性说明: 用户态经 vm_insert_page 映射为普通缓存映射, 与内核
+ * 侧 page_address 别名同为 WB 属性且访问同一物理地址; arm64 为
+ * PIPT cache, 不存在别名不一致问题。不用 remap_pfn_range + 非缓存
+ * 的原因: 部分厂商加固内核 (如华为 HCE) 禁止将普通 RAM 页 remap
+ * 进用户态 (mmap 返回 EINVAL), vm_insert_page 是映射已分配页的
+ * 标准 API。若移植到 VIPT 平台需重新评估缓存属性。
  *
  * 接口:
  *   /dev/valarm0, /dev/valarm1        — mmap (寄存器窗口) + read (统计)
@@ -207,9 +210,14 @@ static int valarm_mmap(struct file *filp, struct vm_area_struct *vma)
 
 	if (vma->vm_end - vma->vm_start > VALARM_REGSZ)
 		return -EINVAL;
-	vma->vm_page_prot = pgprot_noncached(vma->vm_page_prot);
-	return remap_pfn_range(vma, vma->vm_start, page_to_pfn(v->page),
-			       vma->vm_end - vma->vm_start, vma->vm_page_prot);
+	vma->vm_flags |= VM_DONTEXPAND | VM_DONTDUMP;
+	/*
+	 * 用 vm_insert_page 而非 remap_pfn_range: 后者把普通 RAM 页映射
+	 * 进用户态会被部分加固内核拒绝 (EINVAL), 且 vm_insert_page 自动
+	 * 处理页引用计数。映射为普通 WB 缓存属性, arm64 PIPT 下与内核
+	 * 别名天然一致 (见文件头注释)。
+	 */
+	return vm_insert_page(vma, vma->vm_start, v->page);
 }
 
 static const struct file_operations valarm_fops = {

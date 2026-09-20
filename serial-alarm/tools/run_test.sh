@@ -21,6 +21,12 @@ echo "== start alarmd (SCHED_FIFO if permitted) =="
 sudo "$DIR/user/alarmd" -c 1 -o "$CSV" > "$LOG" 2>&1 &
 ALARMD_PID=$!
 sleep 1
+if ! sudo kill -0 "$ALARMD_PID" 2>/dev/null; then
+	echo "FAIL: alarmd exited prematurely, log follows:"
+	cat "$LOG"
+	sudo rmmod valarm 2>/dev/null || true
+	exit 1
+fi
 
 echo "== inject burst: count=$COUNT interval=${INTERVAL}ns on both ports =="
 echo "$COUNT $INTERVAL" | sudo tee /sys/class/misc/valarm0/burst > /dev/null
