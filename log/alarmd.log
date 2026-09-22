@@ -1,0 +1,10 @@
+alarmd ready: polling /dev/valarm0 /dev/valarm1 on cpu1 (SIGUSR1/SIGINT to report)
+==== latency report ====
+samples      : 1903
+avg          : 873.3 ns
+p50          : 140 ns
+p99          : 200 ns
+max          : 874860 ns
+seq_errors   : 2
+ring_overflow: 0
+csv written  : /tmp/alarm_latency.csv

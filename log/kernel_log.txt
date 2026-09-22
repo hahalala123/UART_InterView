@@ -1,0 +1,1199 @@
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Booting Linux on physical CPU 0x0000000000 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Linux version 5.10.0-182.0.0.95.r3582_286.hce2.aarch64 (abuild@szxrtosci10000) (gcc_old (GCC) 10.3.1, GNU ld (GNU Binutils) 2.37) #1 SMP Fri Jul 17 10:14:56 UTC 2026
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: efi: EFI v2.70 by EDK II
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: efi: SMBIOS 3.0=0x3234d0000 MEMATTR=0x321c88018 ACPI 2.0=0x31fac0018 MOKvar=0x3233a0000 MEMRESERVE=0x31f9ed718 
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Using crashkernel=auto, the size chosen is a best effort estimation.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Early table checksum verification disabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: RSDP 0x000000031FAC0018 000024 (v02 BOCHS )
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: XSDT 0x000000031FACFE98 000074 (v01 BOCHS  BXPC     00000001      01000013)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: FACP 0x000000031FACFA98 00010C (v05 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: DSDT 0x000000031FAC7518 00233E (v02 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: APIC 0x000000031FACE998 0002C8 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: PPTT 0x000000031FACED98 0002A8 (v02 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: GTDT 0x000000031FACF818 000060 (v02 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: MCFG 0x000000031FACFF98 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: SPCR 0x000000031FACF918 000050 (v02 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: DBG2 0x000000031FACF998 000057 (v00 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: SRAT 0x000000031FACFC18 0000E8 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: IORT 0x000000031FACFD98 00007C (v00 BOCHS  BXPC     00000001 BXPC 00000001)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: BGRT 0x000000031FACFA18 000038 (v01 INTEL  EDK2     00000002      01000013)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: SPCR: console: pl011,mmio,0x9000000,9600
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x40000000-0x33fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NUMA: NODE_DATA [mem 0x326f662c0-0x326f6bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Zone ranges:
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   DMA      [mem 0x0000000040000000-0x00000000ffffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   DMA32    empty
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   Normal   [mem 0x0000000100000000-0x000000033fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Movable zone start for each node
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Early memory node ranges
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   node   0: [mem 0x0000000040000000-0x000000031facffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   node   0: [mem 0x000000031fad0000-0x000000031fd2ffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   node   0: [mem 0x000000031fd30000-0x00000003231fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   node   0: [mem 0x0000000323200000-0x00000003235dffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   node   0: [mem 0x00000003235e0000-0x00000003275fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   node   0: [mem 0x0000000327600000-0x000000033fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Initmem setup node 0 [mem 0x0000000040000000-0x000000033fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: On node 0 totalpages: 3145728
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   DMA zone: 12288 pages used for memmap
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   DMA zone: 0 pages reserved
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   DMA zone: 786432 pages, LIFO batch:63
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   Normal zone: 36864 pages used for memmap
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   Normal zone: 2359296 pages, LIFO batch:63
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: cma: Reserved 64 MiB at 0x00000000fc000000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Using crashkernel=auto, the size chosen is a best effort estimation.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Reserving 256MB of memory at 3776MB for crashkernel (System RAM: 12288MB)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: parse cmdline param err, kbox reserve memory max size = 0x8000000, cur size = 0x0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: detected dysche master reserve memory size is 0, skip
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: psci: probing for conduit method from ACPI.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: psci: PSCIv1.0 detected in firmware.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: psci: Using standard PSCI v0.2 function IDs
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: psci: Trusted OS migration not required
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: psci: SMC Calling Convention v1.1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x0 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x1 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x2 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x3 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x4 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x5 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x6 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x7 -> Node 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: percpu: Embedded 35 pages/cpu s105560 r8192 d29608 u143360
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcpu-alloc: s105560 r8192 d29608 u143360 alloc=35*4096
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: GIC system register CPU interface
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: kernel page table isolation forced OFF by mitigations=off
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Hardware dirty bit management
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Spectre-v4
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Spectre-BHB
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Hisilicon erratum 162100125
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Built 1 zonelists, mobility grouping on.  Total pages: 3096576
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Policy zone: Normal
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.10.0-182.0.0.95.r3582_286.hce2.aarch64 root=UUID=29b25f20-2d4b-4e9f-a2d9-75dc0744cddf ro net.ifnames=0 console=ttyAMA0,115200n8 mitigations=off crashkernel=auto crash_kexec_post_notifiers cgroup_disable=files fsck.mode=auto fsck.repair=yes panic=1 vga=0x317 nohz=off smmu.bypassdev=0x1000:0x17 smmu.bypassdev=0x1000:0x15 selinux=0 console=tty0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: cgroup: Disabling files control group subsystem
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Fallback order for Node 0: 0 
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Dentry cache hash table entries: 2097152 (order: 12, 16777216 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Inode-cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: mem auto-init: stack:off, heap alloc:off, heap free:off
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: software IO TLB: area num 8.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: software IO TLB: mapped [mem 0x00000000e8000000-0x00000000ec000000] (64MB)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pin_mem: map_addr or map_size is NULL
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Memory: 11482748K/12582912K available (14336K kernel code, 5536K rwdata, 9092K rodata, 4992K init, 13981K bss, 1034628K reserved, 65536K cma-reserved)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: vpmem: swapper[0]: virtual machine RAM not found in e820
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ftrace: allocating 48122 entries in 284 pages
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ftrace: allocated 282 pages with 4 groups
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rcu: Hierarchical RCU implementation.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rcu:         RCU restricting CPUs from NR_CPUS=4096 to nr_cpu_ids=8.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:         Rude variant of Tasks RCU enabled.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:         Tracing variant of Tasks RCU enabled.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=8
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: 256 SPIs implemented
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: 0 Extended SPIs implemented
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: Distributor has no Range Selector support
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: 16 PPIs implemented
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: Enabling SGIs without active state
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU0: found redistributor 0 region 0:0x00000000080a0000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ITS [mem 0x08080000-0x0809ffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ITS@0x0000000008080000: allocated 8192 Devices @100220000 (indirect, esz 8, psz 64K, shr 1)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ITS@0x0000000008080000: allocated 8192 Interrupt Collections @100230000 (flat, esz 8, psz 64K, shr 1)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: using LPI property table @0x0000000100240000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ITS: vtimer-irqbypass disabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU0: using allocated LPI pending table @0x0000000100250000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: Not Support HiSilicon PV SGI!
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rcu:         Offload RCU callbacks from CPUs: (none).
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: arch_timer: cp15 timer(s) running at 100.00MHz (virt).
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: clocksource: arch_sys_counter: mask: 0x1ffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: sched_clock: 57 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: arm-pv: using stolen time PV
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Console: colour dummy device 80x25
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: printk: console [tty0] enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Core revision 20200925
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=400000)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pid_max: default: 32768 minimum: 301
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: LSM: Security Framework initializing
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Yama: becoming mindful.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: AppArmor: AppArmor initialized
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Mount-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Mountpoint-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: arm-pv: using PV sched preempted
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: arm-pv: PV qspinlocks disabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rcu: Hierarchical SRCU implementation.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Platform MSI: ITS@0x8080000 domain created
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI/MSI: ITS@0x8080000 domain created
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Remapping and enabling EFI services.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CrossPartition: IPI: swapper/0[1]: manage section has not been initialized!
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: smp: Bringing up secondary CPUs ...
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU1: found redistributor 1 region 0:0x00000000080c0000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU1: using allocated LPI pending table @0x0000000100260000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU1: Booted secondary processor 0x0000000001 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU2
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU2: found redistributor 2 region 0:0x00000000080e0000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU2: using allocated LPI pending table @0x0000000100270000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU2: Booted secondary processor 0x0000000002 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU3
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU3: found redistributor 3 region 0:0x0000000008100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU3: using allocated LPI pending table @0x0000000100280000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU3: Booted secondary processor 0x0000000003 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU4
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU4: found redistributor 4 region 0:0x0000000008120000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU4: using allocated LPI pending table @0x0000000100290000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU4: Booted secondary processor 0x0000000004 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU5
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU5: found redistributor 5 region 0:0x0000000008140000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU5: using allocated LPI pending table @0x00000001002a0000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU5: Booted secondary processor 0x0000000005 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU6
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU6: found redistributor 6 region 0:0x0000000008160000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU6: using allocated LPI pending table @0x00000001002b0000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU6: Booted secondary processor 0x0000000006 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Detected VIPT I-cache on CPU7
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU7: found redistributor 7 region 0:0x0000000008180000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: GICv3: CPU7: using allocated LPI pending table @0x00000001002c0000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU7: Booted secondary processor 0x0000000007 [0x480fd020]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: smp: Brought up 1 node, 8 CPUs
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SMP: Total of 8 processors activated.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Privileged Access Never
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: LSE atomic instructions
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Data cache clean to Point of Persistence
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Scalable Vector Extension
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: RAS Extension Support
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Instruction cache invalidation not required for I/D coherence
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Stage-2 Force Write-Back
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: CRC32 instructions
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Speculation barrier (SB)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Data cache clean to Point of Deep Persistence
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: E0PD
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Random Number Generator
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: ARMv8.4 Translation Table Level
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: TLB range maintenance instructions
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: ARM64 MPAM Extension Support
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: Enhanced Counter Virtualization
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU features: detected: RCpc load-acquire (LDAPR)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: spectre-v4 mitigation disabled by command-line option
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: spectre-bhb mitigation disabled by command line option
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SVE: maximum available vector length 32 bytes per vector
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SVE: default vector length 32 bytes per vector
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: CPU: All CPU(s) started at EL1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: alternatives: patching kernel code
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: devtmpfs: initialized
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: KASLR enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: IRQ affinity hint notify enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pinctrl core: initialized pinctrl subsystem
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SMBIOS 3.0.0 present.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: DMI: Huawei Cloud OpenStack Nova, BIOS  
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NET: Registered protocol family 16
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: DMA: preallocated 2048 KiB GFP_KERNEL pool for atomic allocations
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: DMA: preallocated 2048 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: DMA: preallocated 2048 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: audit: initializing netlink subsys (disabled)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: audit: type=2000 audit(0.064:1): state=initialized audit_enabled=0 res=1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: thermal_sys: Registered thermal governor 'fair_share'
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: thermal_sys: Registered thermal governor 'step_wise'
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: thermal_sys: Registered thermal governor 'user_space'
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: cpuidle: using governor menu
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ASID allocator initialised with 65536 entries
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB: can optimize 4095 vmemmap pages for hugepages-1048576kB
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB: can optimize 127 vmemmap pages for hugepages-32768kB
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB: can optimize 7 vmemmap pages for hugepages-2048kB
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB: can optimize 0 vmemmap pages for hugepages-64kB
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: bus type PCI registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Serial: AMBA PL011 UART driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(Module Device)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(Processor Device)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(Processor Aggregator Device)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(Linux-Dell-Video)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: 1 ACPI AML tables successfully acquired and loaded
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Interpreter enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Using GIC for interrupt routing
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: MCFG table detected, 1 entries
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ARMH0011:00: ttyAMA0 at MMIO 0x9000000 (irq = 17, base_baud = 0) is a SBSA
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: printk: console [ttyAMA0] enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI EDR HPX-Type3]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: acpi PNP0A08:00: _OSC: platform does not support [LTR DPC]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: acpi PNP0A08:00: _OSC: OS now controls [PCIeHotplug SHPCHotplug PME AER PCIeCapability]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: acpi PNP0A08:00: ECAM area [mem 0x4010000000-0x401fffffff] reserved by PNP0C02:00
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: acpi PNP0A08:00: ECAM at [mem 0x4010000000-0x401fffffff] for [bus 00-ff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Remapped I/O 0x000000003dfe0000 to [io  0x0000-0x1ffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI host bridge to bus 0000:00
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: root bus resource [mem 0x0eff0000-0x3dfdffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x1ffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: root bus resource [mem 0x8000000000-0xffffffffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: reg 0x10: [mem 0x1151c000-0x1151cfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: reg 0x10: [mem 0x1151b000-0x1151bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: reg 0x10: [mem 0x1151a000-0x1151afff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: reg 0x10: [mem 0x11519000-0x11519fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: reg 0x10: [mem 0x11518000-0x11518fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: reg 0x10: [mem 0x11517000-0x11517fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: reg 0x10: [mem 0x11516000-0x11516fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: reg 0x10: [mem 0x11515000-0x11515fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: reg 0x10: [mem 0x11514000-0x11514fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: reg 0x10: [mem 0x11513000-0x11513fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: reg 0x10: [mem 0x11512000-0x11512fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: reg 0x10: [mem 0x11511000-0x11511fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: reg 0x10: [mem 0x11510000-0x11510fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: reg 0x10: [mem 0x1150f000-0x1150ffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: reg 0x10: [mem 0x1150e000-0x1150efff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: reg 0x10: [mem 0x1150d000-0x1150dfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: reg 0x10: [mem 0x1150c000-0x1150cfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: reg 0x10: [mem 0x1150b000-0x1150bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: reg 0x10: [mem 0x1150a000-0x1150afff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: reg 0x10: [mem 0x11509000-0x11509fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: reg 0x10: [mem 0x11508000-0x11508fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: reg 0x10: [mem 0x11507000-0x11507fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: reg 0x10: [mem 0x11506000-0x11506fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: reg 0x10: [mem 0x11505000-0x11505fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: reg 0x10: [mem 0x11504000-0x11504fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: reg 0x10: [mem 0x11503000-0x11503fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: reg 0x10: [mem 0x11502000-0x11502fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: reg 0x10: [mem 0x11501000-0x11501fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: [1b36:000c] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: reg 0x10: [mem 0x11500000-0x11500fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: [1b36:000e] type 01 class 0x060400
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: reg 0x10: [mem 0x11400000-0x114000ff 64bit]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:02: extended config space not accessible
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:01.0: [8086:24cd] type 00 class 0x0c0320
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:01.0: reg 0x10: [mem 0x11302000-0x11302fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: [1af4:1003] type 00 class 0x078000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: reg 0x10: [io  0xf040-0xf07f]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: reg 0x14: [mem 0x11301000-0x11301fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: reg 0x20: [mem 0x8000008000-0x800000bfff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:03.0: [1af4:1002] type 00 class 0x00ff00
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:03.0: reg 0x10: [io  0xf000-0xf03f]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:03.0: reg 0x20: [mem 0x8000004000-0x8000007fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:04.0: [1af4:1050] type 00 class 0x038000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:04.0: reg 0x14: [mem 0x11300000-0x11300fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:04.0: reg 0x20: [mem 0x8000000000-0x8000003fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:03:00.0: [1af4:1041] type 00 class 0x020000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:03:00.0: reg 0x14: [mem 0x11200000-0x11200fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:03:00.0: reg 0x20: [mem 0x8000100000-0x8000103fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:04:00.0: [1af4:1042] type 00 class 0x010000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:04:00.0: reg 0x14: [mem 0x11100000-0x11100fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:04:00.0: reg 0x20: [mem 0x8000200000-0x8000203fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:05:00.0: [1af4:1042] type 00 class 0x010000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:05:00.0: reg 0x14: [mem 0x11000000-0x11000fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:05:00.0: reg 0x20: [mem 0x8000300000-0x8000303fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:06:00.0: [1af4:1048] type 00 class 0x010000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:06:00.0: reg 0x14: [mem 0x10f00000-0x10f00fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:06:00.0: reg 0x20: [mem 0x8000400000-0x8000403fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:07:00.0: [1af4:1048] type 00 class 0x010000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:07:00.0: reg 0x14: [mem 0x10e00000-0x10e00fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:07:00.0: reg 0x20: [mem 0x8000500000-0x8000503fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: bridge window [mem 0x00100000-0x001fffff 64bit pref] to [bus 01-02] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: bridge window [io  0x1000-0x0fff] to [bus 03] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: bridge window [mem 0x00100000-0x001fffff 64bit pref] to [bus 03] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: bridge window [mem 0x00100000-0x001fffff] to [bus 03] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: bridge window [io  0x1000-0x0fff] to [bus 04] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: bridge window [mem 0x00100000-0x001fffff 64bit pref] to [bus 04] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: bridge window [mem 0x00100000-0x001fffff] to [bus 04] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: bridge window [io  0x1000-0x0fff] to [bus 05] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: bridge window [mem 0x00100000-0x001fffff 64bit pref] to [bus 05] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: bridge window [mem 0x00100000-0x001fffff] to [bus 05] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: bridge window [io  0x1000-0x0fff] to [bus 06] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: bridge window [mem 0x00100000-0x001fffff 64bit pref] to [bus 06] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: bridge window [mem 0x00100000-0x001fffff] to [bus 06] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: bridge window [io  0x1000-0x0fff] to [bus 07] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: bridge window [mem 0x00100000-0x001fffff 64bit pref] to [bus 07] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: bridge window [mem 0x00100000-0x001fffff] to [bus 07] add_size 100000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: bridge window [io  0x1000-0x0fff] to [bus 08] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 08] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: bridge window [mem 0x00100000-0x000fffff] to [bus 08] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: bridge window [io  0x1000-0x0fff] to [bus 09] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 09] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: bridge window [mem 0x00100000-0x000fffff] to [bus 09] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: bridge window [io  0x1000-0x0fff] to [bus 0a] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 0a] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: bridge window [mem 0x00100000-0x000fffff] to [bus 0a] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: bridge window [io  0x1000-0x0fff] to [bus 0b] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 0b] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: bridge window [mem 0x00100000-0x000fffff] to [bus 0b] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: bridge window [io  0x1000-0x0fff] to [bus 0c] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 0c] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: bridge window [mem 0x00100000-0x000fffff] to [bus 0c] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: bridge window [io  0x1000-0x0fff] to [bus 0d] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 0d] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: bridge window [mem 0x00100000-0x000fffff] to [bus 0d] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: bridge window [io  0x1000-0x0fff] to [bus 0e] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 0e] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: bridge window [mem 0x00100000-0x000fffff] to [bus 0e] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: bridge window [io  0x1000-0x0fff] to [bus 0f] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 0f] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: bridge window [mem 0x00100000-0x000fffff] to [bus 0f] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: bridge window [io  0x1000-0x0fff] to [bus 10] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 10] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: bridge window [mem 0x00100000-0x000fffff] to [bus 10] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: bridge window [io  0x1000-0x0fff] to [bus 11] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 11] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: bridge window [mem 0x00100000-0x000fffff] to [bus 11] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: bridge window [io  0x1000-0x0fff] to [bus 12] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 12] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: bridge window [mem 0x00100000-0x000fffff] to [bus 12] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: bridge window [io  0x1000-0x0fff] to [bus 13] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 13] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: bridge window [mem 0x00100000-0x000fffff] to [bus 13] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: bridge window [io  0x1000-0x0fff] to [bus 14] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 14] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: bridge window [mem 0x00100000-0x000fffff] to [bus 14] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: bridge window [io  0x1000-0x0fff] to [bus 15] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 15] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: bridge window [mem 0x00100000-0x000fffff] to [bus 15] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: bridge window [io  0x1000-0x0fff] to [bus 16] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 16] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: bridge window [mem 0x00100000-0x000fffff] to [bus 16] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: bridge window [io  0x1000-0x0fff] to [bus 17] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 17] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: bridge window [mem 0x00100000-0x000fffff] to [bus 17] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: bridge window [io  0x1000-0x0fff] to [bus 18] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 18] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: bridge window [mem 0x00100000-0x000fffff] to [bus 18] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: bridge window [io  0x1000-0x0fff] to [bus 19] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 19] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: bridge window [mem 0x00100000-0x000fffff] to [bus 19] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: bridge window [io  0x1000-0x0fff] to [bus 1a] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 1a] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: bridge window [mem 0x00100000-0x000fffff] to [bus 1a] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: bridge window [io  0x1000-0x0fff] to [bus 1b] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 1b] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: bridge window [mem 0x00100000-0x000fffff] to [bus 1b] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: bridge window [io  0x1000-0x0fff] to [bus 1c] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 1c] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: bridge window [mem 0x00100000-0x000fffff] to [bus 1c] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: bridge window [io  0x1000-0x0fff] to [bus 1d] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 1d] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: bridge window [mem 0x00100000-0x000fffff] to [bus 1d] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: bridge window [io  0x1000-0x0fff] to [bus 1e] add_size 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 1e] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: bridge window [mem 0x00100000-0x000fffff] to [bus 1e] add_size 200000 add_align 100000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: BAR 14: assigned [mem 0x0f000000-0x0f1fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: BAR 15: assigned [mem 0x8000000000-0x80001fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: BAR 14: assigned [mem 0x0f200000-0x0f3fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: BAR 15: assigned [mem 0x8000200000-0x80003fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: BAR 14: assigned [mem 0x0f400000-0x0f5fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: BAR 15: assigned [mem 0x8000400000-0x80005fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: BAR 14: assigned [mem 0x0f600000-0x0f7fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: BAR 15: assigned [mem 0x8000600000-0x80007fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: BAR 14: assigned [mem 0x0f800000-0x0f9fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: BAR 15: assigned [mem 0x8000800000-0x80009fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: BAR 14: assigned [mem 0x0fa00000-0x0fbfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: BAR 15: assigned [mem 0x8000a00000-0x8000bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: BAR 14: assigned [mem 0x0fc00000-0x0fdfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: BAR 15: assigned [mem 0x8000c00000-0x8000dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: BAR 14: assigned [mem 0x0fe00000-0x0fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: BAR 15: assigned [mem 0x8000e00000-0x8000ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: BAR 14: assigned [mem 0x10000000-0x101fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: BAR 15: assigned [mem 0x8001000000-0x80011fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: BAR 14: assigned [mem 0x10200000-0x103fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: BAR 15: assigned [mem 0x8001200000-0x80013fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: BAR 14: assigned [mem 0x10400000-0x105fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: BAR 15: assigned [mem 0x8001400000-0x80015fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: BAR 14: assigned [mem 0x10600000-0x107fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: BAR 15: assigned [mem 0x8001600000-0x80017fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: BAR 14: assigned [mem 0x10800000-0x109fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: BAR 15: assigned [mem 0x8001800000-0x80019fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: BAR 14: assigned [mem 0x10a00000-0x10bfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: BAR 15: assigned [mem 0x8001a00000-0x8001bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: BAR 14: assigned [mem 0x10c00000-0x10dfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: BAR 15: assigned [mem 0x8001c00000-0x8001dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: BAR 14: assigned [mem 0x10e00000-0x10ffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: BAR 15: assigned [mem 0x8001e00000-0x8001ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: BAR 14: assigned [mem 0x11000000-0x111fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: BAR 15: assigned [mem 0x8002000000-0x80021fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: BAR 14: assigned [mem 0x11200000-0x113fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: BAR 15: assigned [mem 0x8002200000-0x80023fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: BAR 14: assigned [mem 0x11400000-0x115fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: BAR 15: assigned [mem 0x8002400000-0x80025fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: BAR 14: assigned [mem 0x11600000-0x117fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: BAR 15: assigned [mem 0x8002600000-0x80027fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: BAR 14: assigned [mem 0x11800000-0x119fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: BAR 15: assigned [mem 0x8002800000-0x80029fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: BAR 14: assigned [mem 0x11a00000-0x11bfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: BAR 15: assigned [mem 0x8002a00000-0x8002bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: BAR 14: assigned [mem 0x11c00000-0x11dfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: BAR 15: assigned [mem 0x8002c00000-0x8002dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: BAR 14: assigned [mem 0x11e00000-0x11ffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: BAR 15: assigned [mem 0x8002e00000-0x8002ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: BAR 14: assigned [mem 0x12000000-0x121fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: BAR 15: assigned [mem 0x8003000000-0x80031fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: BAR 14: assigned [mem 0x12200000-0x123fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: BAR 15: assigned [mem 0x8003200000-0x80033fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: BAR 14: assigned [mem 0x12400000-0x125fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: BAR 15: assigned [mem 0x8003400000-0x80035fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: BAR 14: assigned [mem 0x12600000-0x127fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: BAR 15: assigned [mem 0x8003600000-0x80037fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: BAR 14: assigned [mem 0x12800000-0x129fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: BAR 15: assigned [mem 0x8003800000-0x80039fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: BAR 0: assigned [mem 0x0eff0000-0x0eff0fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: BAR 13: assigned [io  0x1000-0x1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: BAR 0: assigned [mem 0x0eff1000-0x0eff1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: BAR 13: assigned [io  0x2000-0x2fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: BAR 0: assigned [mem 0x0eff2000-0x0eff2fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: BAR 13: assigned [io  0x3000-0x3fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: BAR 0: assigned [mem 0x0eff3000-0x0eff3fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: BAR 13: assigned [io  0x4000-0x4fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: BAR 0: assigned [mem 0x0eff4000-0x0eff4fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: BAR 13: assigned [io  0x5000-0x5fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: BAR 0: assigned [mem 0x0eff5000-0x0eff5fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: BAR 13: assigned [io  0x6000-0x6fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: BAR 0: assigned [mem 0x0eff6000-0x0eff6fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: BAR 13: assigned [io  0x7000-0x7fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: BAR 0: assigned [mem 0x0eff7000-0x0eff7fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: BAR 13: assigned [io  0x8000-0x8fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: BAR 0: assigned [mem 0x0eff8000-0x0eff8fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: BAR 13: assigned [io  0x9000-0x9fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: BAR 0: assigned [mem 0x0eff9000-0x0eff9fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: BAR 13: assigned [io  0xa000-0xafff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: BAR 0: assigned [mem 0x0effa000-0x0effafff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: BAR 13: assigned [io  0xb000-0xbfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: BAR 0: assigned [mem 0x0effb000-0x0effbfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: BAR 13: assigned [io  0xc000-0xcfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: BAR 0: assigned [mem 0x0effc000-0x0effcfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: BAR 13: assigned [io  0xd000-0xdfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: BAR 0: assigned [mem 0x0effd000-0x0effdfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: BAR 13: assigned [io  0xe000-0xefff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: BAR 0: assigned [mem 0x0effe000-0x0effefff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: BAR 13: assigned [io  0xf000-0xffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: BAR 0: assigned [mem 0x0efff000-0x0effffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: BAR 13: assigned [io  0x10000-0x10fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: BAR 0: assigned [mem 0x12a00000-0x12a00fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: BAR 13: assigned [io  0x11000-0x11fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: BAR 0: assigned [mem 0x12a01000-0x12a01fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: BAR 13: assigned [io  0x12000-0x12fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: BAR 0: assigned [mem 0x12a02000-0x12a02fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: BAR 13: assigned [io  0x13000-0x13fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: BAR 0: assigned [mem 0x12a03000-0x12a03fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: BAR 13: assigned [io  0x14000-0x14fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: BAR 0: assigned [mem 0x12a04000-0x12a04fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: BAR 13: assigned [io  0x15000-0x15fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: BAR 0: assigned [mem 0x12a05000-0x12a05fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: BAR 13: assigned [io  0x16000-0x16fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: BAR 0: assigned [mem 0x12a06000-0x12a06fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: BAR 13: assigned [io  0x17000-0x17fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: BAR 0: assigned [mem 0x12a07000-0x12a07fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: BAR 13: assigned [io  0x18000-0x18fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: BAR 0: assigned [mem 0x12a08000-0x12a08fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: BAR 13: assigned [io  0x19000-0x19fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: BAR 0: assigned [mem 0x12a09000-0x12a09fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: BAR 13: assigned [io  0x1a000-0x1afff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: BAR 0: assigned [mem 0x12a0a000-0x12a0afff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: BAR 13: assigned [io  0x1b000-0x1bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: BAR 0: assigned [mem 0x12a0b000-0x12a0bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: BAR 13: assigned [io  0x1c000-0x1cfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: BAR 0: assigned [mem 0x12a0c000-0x12a0cfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: BAR 13: assigned [io  0x1d000-0x1dfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: BAR 14: assigned [mem 0x0f000000-0x0f0fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: BAR 15: assigned [mem 0x8000000000-0x80000fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: BAR 13: assigned [io  0x1000-0x1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: BAR 0: assigned [mem 0x0f100000-0x0f1000ff 64bit]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: BAR 4: assigned [mem 0x8000000000-0x8000003fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:03.0: BAR 4: assigned [mem 0x8000004000-0x8000007fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:04.0: BAR 4: assigned [mem 0x8000008000-0x800000bfff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:01.0: BAR 0: assigned [mem 0x0f000000-0x0f000fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: BAR 1: assigned [mem 0x0f001000-0x0f001fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:04.0: BAR 1: assigned [mem 0x0f002000-0x0f002fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:02.0: BAR 0: assigned [io  0x1000-0x103f]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:02:03.0: BAR 0: assigned [io  0x1040-0x107f]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0: PCI bridge to [bus 02]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0:   bridge window [io  0x1000-0x1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0:   bridge window [mem 0x0f000000-0x0f0fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:01:00.0:   bridge window [mem 0x8000000000-0x80000fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0: PCI bridge to [bus 01-02]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0:   bridge window [io  0x1000-0x1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0:   bridge window [mem 0x0f000000-0x0f1fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.0:   bridge window [mem 0x8000000000-0x80001fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:03:00.0: BAR 4: assigned [mem 0x8000200000-0x8000203fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:03:00.0: BAR 1: assigned [mem 0x0f200000-0x0f200fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1: PCI bridge to [bus 03]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1:   bridge window [io  0x2000-0x2fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1:   bridge window [mem 0x0f200000-0x0f3fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.1:   bridge window [mem 0x8000200000-0x80003fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:04:00.0: BAR 4: assigned [mem 0x8000400000-0x8000403fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:04:00.0: BAR 1: assigned [mem 0x0f400000-0x0f400fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2: PCI bridge to [bus 04]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2:   bridge window [io  0x3000-0x3fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2:   bridge window [mem 0x0f400000-0x0f5fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.2:   bridge window [mem 0x8000400000-0x80005fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:05:00.0: BAR 4: assigned [mem 0x8000600000-0x8000603fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:05:00.0: BAR 1: assigned [mem 0x0f600000-0x0f600fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3: PCI bridge to [bus 05]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3:   bridge window [io  0x4000-0x4fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3:   bridge window [mem 0x0f600000-0x0f7fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.3:   bridge window [mem 0x8000600000-0x80007fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:06:00.0: BAR 4: assigned [mem 0x8000800000-0x8000803fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:06:00.0: BAR 1: assigned [mem 0x0f800000-0x0f800fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4: PCI bridge to [bus 06]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4:   bridge window [io  0x5000-0x5fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4:   bridge window [mem 0x0f800000-0x0f9fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.4:   bridge window [mem 0x8000800000-0x80009fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:07:00.0: BAR 4: assigned [mem 0x8000a00000-0x8000a03fff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:07:00.0: BAR 1: assigned [mem 0x0fa00000-0x0fa00fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5: PCI bridge to [bus 07]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5:   bridge window [io  0x6000-0x6fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5:   bridge window [mem 0x0fa00000-0x0fbfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.5:   bridge window [mem 0x8000a00000-0x8000bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6: PCI bridge to [bus 08]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6:   bridge window [io  0x7000-0x7fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6:   bridge window [mem 0x0fc00000-0x0fdfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.6:   bridge window [mem 0x8000c00000-0x8000dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7: PCI bridge to [bus 09]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7:   bridge window [io  0x8000-0x8fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7:   bridge window [mem 0x0fe00000-0x0fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:01.7:   bridge window [mem 0x8000e00000-0x8000ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0: PCI bridge to [bus 0a]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0:   bridge window [io  0x9000-0x9fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0:   bridge window [mem 0x10000000-0x101fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.0:   bridge window [mem 0x8001000000-0x80011fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1: PCI bridge to [bus 0b]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1:   bridge window [io  0xa000-0xafff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1:   bridge window [mem 0x10200000-0x103fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.1:   bridge window [mem 0x8001200000-0x80013fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2: PCI bridge to [bus 0c]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2:   bridge window [io  0xb000-0xbfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2:   bridge window [mem 0x10400000-0x105fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.2:   bridge window [mem 0x8001400000-0x80015fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3: PCI bridge to [bus 0d]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3:   bridge window [io  0xc000-0xcfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3:   bridge window [mem 0x10600000-0x107fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.3:   bridge window [mem 0x8001600000-0x80017fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4: PCI bridge to [bus 0e]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4:   bridge window [io  0xd000-0xdfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4:   bridge window [mem 0x10800000-0x109fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.4:   bridge window [mem 0x8001800000-0x80019fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5: PCI bridge to [bus 0f]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5:   bridge window [io  0xe000-0xefff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5:   bridge window [mem 0x10a00000-0x10bfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.5:   bridge window [mem 0x8001a00000-0x8001bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6: PCI bridge to [bus 10]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6:   bridge window [io  0xf000-0xffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6:   bridge window [mem 0x10c00000-0x10dfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.6:   bridge window [mem 0x8001c00000-0x8001dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7: PCI bridge to [bus 11]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7:   bridge window [io  0x10000-0x10fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7:   bridge window [mem 0x10e00000-0x10ffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:02.7:   bridge window [mem 0x8001e00000-0x8001ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0: PCI bridge to [bus 12]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0:   bridge window [io  0x11000-0x11fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0:   bridge window [mem 0x11000000-0x111fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.0:   bridge window [mem 0x8002000000-0x80021fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1: PCI bridge to [bus 13]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1:   bridge window [io  0x12000-0x12fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1:   bridge window [mem 0x11200000-0x113fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.1:   bridge window [mem 0x8002200000-0x80023fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2: PCI bridge to [bus 14]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2:   bridge window [io  0x13000-0x13fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2:   bridge window [mem 0x11400000-0x115fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.2:   bridge window [mem 0x8002400000-0x80025fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3: PCI bridge to [bus 15]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3:   bridge window [io  0x14000-0x14fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3:   bridge window [mem 0x11600000-0x117fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.3:   bridge window [mem 0x8002600000-0x80027fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4: PCI bridge to [bus 16]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4:   bridge window [io  0x15000-0x15fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4:   bridge window [mem 0x11800000-0x119fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.4:   bridge window [mem 0x8002800000-0x80029fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5: PCI bridge to [bus 17]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5:   bridge window [io  0x16000-0x16fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5:   bridge window [mem 0x11a00000-0x11bfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.5:   bridge window [mem 0x8002a00000-0x8002bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6: PCI bridge to [bus 18]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6:   bridge window [io  0x17000-0x17fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6:   bridge window [mem 0x11c00000-0x11dfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.6:   bridge window [mem 0x8002c00000-0x8002dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7: PCI bridge to [bus 19]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7:   bridge window [io  0x18000-0x18fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7:   bridge window [mem 0x11e00000-0x11ffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:03.7:   bridge window [mem 0x8002e00000-0x8002ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0: PCI bridge to [bus 1a]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0:   bridge window [io  0x19000-0x19fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0:   bridge window [mem 0x12000000-0x121fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.0:   bridge window [mem 0x8003000000-0x80031fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1: PCI bridge to [bus 1b]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1:   bridge window [io  0x1a000-0x1afff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1:   bridge window [mem 0x12200000-0x123fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.1:   bridge window [mem 0x8003200000-0x80033fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2: PCI bridge to [bus 1c]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2:   bridge window [io  0x1b000-0x1bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2:   bridge window [mem 0x12400000-0x125fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.2:   bridge window [mem 0x8003400000-0x80035fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3: PCI bridge to [bus 1d]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3:   bridge window [io  0x1c000-0x1cfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3:   bridge window [mem 0x12600000-0x127fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.3:   bridge window [mem 0x8003600000-0x80037fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4: PCI bridge to [bus 1e]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4:   bridge window [io  0x1d000-0x1dfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4:   bridge window [mem 0x12800000-0x129fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci 0000:00:04.4:   bridge window [mem 0x8003800000-0x80039fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: resource 4 [mem 0x0eff0000-0x3dfdffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: resource 5 [io  0x0000-0x1ffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:00: resource 6 [mem 0x8000000000-0xffffffffff window]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:01: resource 0 [io  0x1000-0x1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:01: resource 1 [mem 0x0f000000-0x0f1fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:01: resource 2 [mem 0x8000000000-0x80001fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:02: resource 0 [io  0x1000-0x1fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:02: resource 1 [mem 0x0f000000-0x0f0fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:02: resource 2 [mem 0x8000000000-0x80000fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:03: resource 0 [io  0x2000-0x2fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:03: resource 1 [mem 0x0f200000-0x0f3fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:03: resource 2 [mem 0x8000200000-0x80003fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:04: resource 0 [io  0x3000-0x3fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:04: resource 1 [mem 0x0f400000-0x0f5fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:04: resource 2 [mem 0x8000400000-0x80005fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:05: resource 0 [io  0x4000-0x4fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:05: resource 1 [mem 0x0f600000-0x0f7fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:05: resource 2 [mem 0x8000600000-0x80007fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:06: resource 0 [io  0x5000-0x5fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:06: resource 1 [mem 0x0f800000-0x0f9fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:06: resource 2 [mem 0x8000800000-0x80009fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:07: resource 0 [io  0x6000-0x6fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:07: resource 1 [mem 0x0fa00000-0x0fbfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:07: resource 2 [mem 0x8000a00000-0x8000bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:08: resource 0 [io  0x7000-0x7fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:08: resource 1 [mem 0x0fc00000-0x0fdfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:08: resource 2 [mem 0x8000c00000-0x8000dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:09: resource 0 [io  0x8000-0x8fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:09: resource 1 [mem 0x0fe00000-0x0fffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:09: resource 2 [mem 0x8000e00000-0x8000ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0a: resource 0 [io  0x9000-0x9fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0a: resource 1 [mem 0x10000000-0x101fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0a: resource 2 [mem 0x8001000000-0x80011fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0b: resource 0 [io  0xa000-0xafff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0b: resource 1 [mem 0x10200000-0x103fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0b: resource 2 [mem 0x8001200000-0x80013fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0c: resource 0 [io  0xb000-0xbfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0c: resource 1 [mem 0x10400000-0x105fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0c: resource 2 [mem 0x8001400000-0x80015fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0d: resource 0 [io  0xc000-0xcfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0d: resource 1 [mem 0x10600000-0x107fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0d: resource 2 [mem 0x8001600000-0x80017fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0e: resource 0 [io  0xd000-0xdfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0e: resource 1 [mem 0x10800000-0x109fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0e: resource 2 [mem 0x8001800000-0x80019fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0f: resource 0 [io  0xe000-0xefff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0f: resource 1 [mem 0x10a00000-0x10bfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:0f: resource 2 [mem 0x8001a00000-0x8001bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:10: resource 0 [io  0xf000-0xffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:10: resource 1 [mem 0x10c00000-0x10dfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:10: resource 2 [mem 0x8001c00000-0x8001dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:11: resource 0 [io  0x10000-0x10fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:11: resource 1 [mem 0x10e00000-0x10ffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:11: resource 2 [mem 0x8001e00000-0x8001ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:12: resource 0 [io  0x11000-0x11fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:12: resource 1 [mem 0x11000000-0x111fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:12: resource 2 [mem 0x8002000000-0x80021fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:13: resource 0 [io  0x12000-0x12fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:13: resource 1 [mem 0x11200000-0x113fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:13: resource 2 [mem 0x8002200000-0x80023fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:14: resource 0 [io  0x13000-0x13fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:14: resource 1 [mem 0x11400000-0x115fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:14: resource 2 [mem 0x8002400000-0x80025fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:15: resource 0 [io  0x14000-0x14fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:15: resource 1 [mem 0x11600000-0x117fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:15: resource 2 [mem 0x8002600000-0x80027fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:16: resource 0 [io  0x15000-0x15fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:16: resource 1 [mem 0x11800000-0x119fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:16: resource 2 [mem 0x8002800000-0x80029fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:17: resource 0 [io  0x16000-0x16fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:17: resource 1 [mem 0x11a00000-0x11bfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:17: resource 2 [mem 0x8002a00000-0x8002bfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:18: resource 0 [io  0x17000-0x17fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:18: resource 1 [mem 0x11c00000-0x11dfffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:18: resource 2 [mem 0x8002c00000-0x8002dfffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:19: resource 0 [io  0x18000-0x18fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:19: resource 1 [mem 0x11e00000-0x11ffffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:19: resource 2 [mem 0x8002e00000-0x8002ffffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1a: resource 0 [io  0x19000-0x19fff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1a: resource 1 [mem 0x12000000-0x121fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1a: resource 2 [mem 0x8003000000-0x80031fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1b: resource 0 [io  0x1a000-0x1afff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1b: resource 1 [mem 0x12200000-0x123fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1b: resource 2 [mem 0x8003200000-0x80033fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1c: resource 0 [io  0x1b000-0x1bfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1c: resource 1 [mem 0x12400000-0x125fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1c: resource 2 [mem 0x8003400000-0x80035fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1d: resource 0 [io  0x1c000-0x1cfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1d: resource 1 [mem 0x12600000-0x127fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1d: resource 2 [mem 0x8003600000-0x80037fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1e: resource 0 [io  0x1d000-0x1dfff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1e: resource 1 [mem 0x12800000-0x129fffff]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pci_bus 0000:1e: resource 2 [mem 0x8003800000-0x80039fffff 64bit pref]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: PCI Interrupt Link [GSI0] (IRQs *35)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: PCI Interrupt Link [GSI1] (IRQs *36)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: PCI Interrupt Link [GSI2] (IRQs *37)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: PCI Interrupt Link [GSI3] (IRQs *38)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: iommu: Default domain type: Translated 
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: vgaarb: loaded
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SCSI subsystem initialized
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: bus type USB registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usbcore: registered new interface driver usbfs
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usbcore: registered new interface driver hub
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usbcore: registered new device driver usb
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pps_core: LinuxPPS API ver. 1 registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PTP clock support registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: EDAC MC: Ver: 3.0.0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Registered efivars operations
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU2
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU3
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU4
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU5
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU6
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: No ACPI PMU IRQ for CPU7
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NetLabel: Initializing
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NetLabel:  domain hash size = 128
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NetLabel:  unlabeled traffic allowed by default
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: clocksource: Switched to clocksource arch_sys_counter
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: VFS: Disk quotas dquot_6.6.0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: AppArmor: AppArmor Filesystem Enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pnp: PnP ACPI init
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: system 00:00: [mem 0x4010000000-0x401fffffff window] could not be reserved
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: system 00:00: Plug and Play ACPI device, IDs PNP0c02 (active)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pnp: PnP ACPI: found 1 devices
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NET: Registered protocol family 2
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: tcp_listen_portaddr_hash hash table entries: 8192 (order: 5, 131072 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: TCP established hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: TCP: Hash tables configured (established 131072 bind 65536)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: UDP hash table entries: 8192 (order: 6, 262144 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: UDP-Lite hash table entries: 8192 (order: 6, 262144 bytes, linear)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NET: Registered protocol family 1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI: CLS 0 bytes, default 64
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Trying to unpack rootfs image as initramfs...
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Freeing initrd memory: 19296K
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: kvm [1]: HYP mode not available
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Initialise system trusted keyrings
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Key type blacklist registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: workingset: timestamp_bits=39 max_order=22 bucket_order=0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: [memstat]starting init memstat for modules
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: zbud: loaded
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: integrity: Platform Keyring initialized
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: cms cbb init
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: modsign: create major 246 for module crl devs
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NET: Registered protocol family 38
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Key type asymmetric registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Asymmetric key parser 'x509' registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Asymmetric key parser 'pgp' registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: io scheduler mq-deadline registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: io scheduler kyber registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: io scheduler bfq registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI Interrupt Link [GSI1] enabled at IRQ 36
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.0: PME: Signaling with IRQ 23
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.0: AER: enabled with IRQ 23
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.0: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.1: PME: Signaling with IRQ 24
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.1: AER: enabled with IRQ 24
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.1: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.2: PME: Signaling with IRQ 25
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.2: AER: enabled with IRQ 25
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.2: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.3: PME: Signaling with IRQ 26
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.3: AER: enabled with IRQ 26
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.3: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.4: PME: Signaling with IRQ 27
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.4: AER: enabled with IRQ 27
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.4: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.5: PME: Signaling with IRQ 28
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.5: AER: enabled with IRQ 28
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.5: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.6: PME: Signaling with IRQ 29
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.6: AER: enabled with IRQ 29
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.6: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.7: PME: Signaling with IRQ 30
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.7: AER: enabled with IRQ 30
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:01.7: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI Interrupt Link [GSI2] enabled at IRQ 37
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.0: PME: Signaling with IRQ 31
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.0: AER: enabled with IRQ 31
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.0: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.1: PME: Signaling with IRQ 32
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.1: AER: enabled with IRQ 32
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.1: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.2: PME: Signaling with IRQ 33
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.2: AER: enabled with IRQ 33
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.2: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.3: PME: Signaling with IRQ 34
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.3: AER: enabled with IRQ 34
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.3: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.4: PME: Signaling with IRQ 35
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.4: AER: enabled with IRQ 35
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.4: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.5: PME: Signaling with IRQ 36
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.5: AER: enabled with IRQ 36
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.5: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.6: PME: Signaling with IRQ 37
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.6: AER: enabled with IRQ 37
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.6: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.7: PME: Signaling with IRQ 38
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.7: AER: enabled with IRQ 38
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:02.7: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI Interrupt Link [GSI3] enabled at IRQ 38
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.0: PME: Signaling with IRQ 39
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.0: AER: enabled with IRQ 39
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.0: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.1: PME: Signaling with IRQ 40
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.1: AER: enabled with IRQ 40
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.1: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.2: PME: Signaling with IRQ 41
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.2: AER: enabled with IRQ 41
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.2: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.3: PME: Signaling with IRQ 42
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.3: AER: enabled with IRQ 42
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.3: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.4: PME: Signaling with IRQ 43
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.4: AER: enabled with IRQ 43
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.4: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.5: PME: Signaling with IRQ 44
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.5: AER: enabled with IRQ 44
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.5: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.6: PME: Signaling with IRQ 45
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.6: AER: enabled with IRQ 45
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.6: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.7: PME: Signaling with IRQ 46
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.7: AER: enabled with IRQ 46
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:03.7: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: PCI Interrupt Link [GSI0] enabled at IRQ 35
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.0: PME: Signaling with IRQ 47
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.0: AER: enabled with IRQ 47
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.0: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.1: PME: Signaling with IRQ 48
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.1: AER: enabled with IRQ 48
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.1: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.2: PME: Signaling with IRQ 49
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.2: AER: enabled with IRQ 49
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.2: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.3: PME: Signaling with IRQ 50
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.3: AER: enabled with IRQ 50
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.3: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.4: PME: Signaling with IRQ 51
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.4: AER: enabled with IRQ 51
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pcieport 0000:00:04.4: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: shpchp 0000:01:00.0: HPC vendor_id 1b36 device_id e ss_vid 0 ss_did 0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ACPI: Power Button [PWRB]
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pin_memory: pin_memory init
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rdac: device handler registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: hp_sw: device handler registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: emc: device handler registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: alua: device handler registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: nvme-dfx: Config module initialized successfully
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci-pci: EHCI PCI platform driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci-pci 0000:02:01.0: EHCI Host Controller
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci-pci 0000:02:01.0: new USB bus registered, assigned bus number 1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci-pci 0000:02:01.0: irq 19, io mem 0x0f000000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci-pci 0000:02:01.0: USB 2.0 started, EHCI 1.00
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb usb1: Product: EHCI Host Controller
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb usb1: Manufacturer: Linux 5.10.0-182.0.0.95.r3582_286.hce2.aarch64 ehci_hcd
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb usb1: SerialNumber: 0000:02:01.0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: hub 1-0:1.0: USB hub found
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: hub 1-0:1.0: 6 ports detected
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ehci-platform: EHCI generic platform driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: ohci-pci: OHCI PCI platform driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: uhci_hcd: USB Universal Host Controller Interface driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: mousedev: PS/2 mouse device common for all mice
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rtc-efi rtc-efi.0: registered as rtc0
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: rtc-efi rtc-efi.0: setting system clock to 2026-09-20T16:01:52 UTC (1789920112)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: hid: raw HID events driver (C) Jiri Kosina
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usbcore: registered new interface driver usbhid
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usbhid: USB HID core driver
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Initializing XFRM netlink socket
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NET: Registered protocol family 10
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Segment Routing with IPv6
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: NET: Registered protocol family 17
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: pmem_reserve: live_update kobj not exist
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: registered taskstats version 1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: modsign: cms context initialized
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Loading compiled-in X.509 certificates
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: alg: No test for psspad(rsa,sha256) (psspad(rsa-generic,sha256))
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Loaded X.509 cert
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Load PGP public keys
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: live_update kobj not exist
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Key type .fscrypt registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Key type fscrypt-provisioning registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: cryptd: max_cpu_qlen set to 1000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Key type encrypted registered
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: AppArmor: AppArmor sha1 policy hashing enabled
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: integrity: Loading X.509 certificate: UEFI:MokListRT (MOKvar table)
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: integrity: Loaded X.509 cert
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: RAS: RAS CPU correctable errors collector initialized.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: clk: Disabling unused clocks
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: SDEI NMI watchdog: Disable SDEI NMI Watchdog in VM
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: watchdog: sample period is: 4000000000
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Freeing unused kernel memory: 4992K
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: Run /init as init process
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   with arguments:
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:     /init
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:   with environment:
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:     HOME=/
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:     TERM=linux
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:     crashkernel=auto
+Sep 21 00:01:52 ecs-kunpeng0607 kernel:     vga=0x317
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: systemd v249-16.r88.hce2 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA -SMACK +SECCOMP +GCRYPT +GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 +IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB -ZSTD +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=legacy)
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Detected virtualization kvm.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Detected architecture arm64.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Running in initial RAM disk.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Hostname set to <ecs-kunpeng0607>.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Queued start job for default target Initrd Default Target.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: random: systemd: uninitialized urandom read (16 bytes read)
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: random: systemd: uninitialized urandom read (16 bytes read)
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Reached target Local File Systems.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: random: systemd: uninitialized urandom read (16 bytes read)
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Reached target Path Units.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Reached target Slice Units.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Reached target Swaps.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Reached target Timer Units.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Listening on Journal Socket (/dev/log).
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Listening on Journal Socket.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Listening on udev Control Socket.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Listening on udev Kernel Socket.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Reached target Socket Units.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb 1-1: new high-speed USB device number 2 using ehci-pci
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting Create List of Static Device Nodes...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: systemd-journald.service: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting Journal Service...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting Load Kernel Modules...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting Setup Virtual Console...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Finished Create List of Static Device Nodes.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting Create Static Device Nodes in /dev...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Finished Load Kernel Modules.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Finished Create Static Device Nodes in /dev.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting Apply Kernel Variables...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Finished Apply Kernel Variables.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Finished Setup Virtual Console.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Condition check resulted in dracut ask for additional cmdline parameters being skipped.
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Starting dracut cmdline hook...
+Sep 21 00:01:52 ecs-kunpeng0607 systemd[1]: Started Journal Service.
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb 1-1: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=10
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb 1-1: Product: QEMU USB Tablet
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb 1-1: Manufacturer: QEMU
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: usb 1-1: SerialNumber: 28754-0000:00:01.0:00.0:01.0-1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: input: QEMU QEMU USB Tablet as /devices/pci0000:00/0000:00:01.0/0000:01:00.0/0000:02:01.0/usb1/1-1/1-1:1.0/0003:0627:0001.0001/input/input1
+Sep 21 00:01:52 ecs-kunpeng0607 kernel: hid-generic 0003:0627:0001.0001: input,hidraw0: USB HID v0.01 Mouse [QEMU QEMU USB Tablet] on usb-0000:02:01.0-1/input0
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio-pci 0000:02:02.0: enabling device (0000 -> 0003)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio-pci 0000:02:03.0: enabling device (0000 -> 0003)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio-pci 0000:03:00.0: enabling device (0000 -> 0002)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio-pci 0000:05:00.0: enabling device (0000 -> 0002)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio-pci 0000:06:00.0: enabling device (0000 -> 0002)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio-pci 0000:07:00.0: enabling device (0000 -> 0002)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: usb 1-2: new high-speed USB device number 3 using ehci-pci
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: [drm] pci: virtio-gpu-pci detected at 0000:02:04.0
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: [drm] features: -virgl +edid
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: [drm] number of scanouts: 1
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: [drm] number of cap sets: 0
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: [drm] Initialized virtio_gpu 0.1.0 0 for virtio2 on minor 0
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: Console: switching to colour frame buffer device 128x48
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio_gpu virtio2: [drm] fb0: virtio_gpudrmfb frame buffer device
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: scsi host0: Virtio SCSI HBA
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: scsi host1: Virtio SCSI HBA
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio_blk virtio4: [vda] 541065216 512-byte logical blocks (277 GB/258 GiB)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: vda: detected capacity change from 0 to 277025390592
+Sep 21 00:01:53 ecs-kunpeng0607 kernel:  vda: vda1 vda2
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio_blk virtio4: [vda] new size: 541065216 512-byte logical blocks (277 GB/258 GiB)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: vda: detected capacity change from 0 to 277025390592
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio_blk virtio5: [vdb] 134217728 512-byte logical blocks (68.7 GB/64.0 GiB)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: vdb: detected capacity change from 0 to 68719476736
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: virtio_blk virtio5: [vdb] new size: 134217728 512-byte logical blocks (68.7 GB/64.0 GiB)
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: vdb: detected capacity change from 0 to 68719476736
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: usb 1-2: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: usb 1-2: New USB device strings: Mfr=1, Product=4, SerialNumber=11
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: usb 1-2: Product: QEMU USB Keyboard
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: usb 1-2: Manufacturer: QEMU
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: usb 1-2: SerialNumber: 68284-0000:00:01.0:00.0:01.0-2
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: input: QEMU QEMU USB Keyboard as /devices/pci0000:00/0000:00:01.0/0000:01:00.0/0000:02:01.0/usb1/1-2/1-2:1.0/0003:0627:0001.0002/input/input2
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: hid-generic 0003:0627:0001.0002: input,hidraw1: USB HID v1.11 Keyboard [QEMU QEMU USB Keyboard] on usb-0000:02:01.0-2/input0
+Sep 21 00:01:53 ecs-kunpeng0607 kernel: EXT4-fs (vda2): mounted filesystem 29b25f20-2d4b-4e9f-a2d9-75dc0744cddf ro with ordered data mode. Opts: (null)
+Sep 21 00:01:54 ecs-kunpeng0607 systemd-journald[347]: Received SIGTERM from PID 1 (systemd).
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: systemd v249-16.r88.hce2 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA -SMACK +SECCOMP +GCRYPT +GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 +IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB -ZSTD +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=legacy)
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Detected virtualization kvm.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Detected architecture arm64.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd-rc-local-generator[696]: /etc/rc.d/rc.local is not marked executable, skipping.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd-sysv-generator[699]: SysV service '/etc/rc.d/init.d/multi-queue-hw' lacks a native systemd unit file. Automatically generating a unit file for compatibility. Please update package to include a native systemd unit file, in order to make it more safe and robust.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd-sysv-generator[699]: SysV service '/etc/rc.d/init.d/hostguard' lacks a native systemd unit file. Automatically generating a unit file for compatibility. Please update package to include a native systemd unit file, in order to make it more safe and robust.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: random: lvmconfig: uninitialized urandom read (4 bytes read)
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Configuration file /usr/lib/systemd/system/uniagentd.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Configuration file /usr/lib/systemd/system/ksecurec.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: initrd-switch-root.service: Deactivated successfully.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Stopped Switch Root.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: random: systemd: uninitialized urandom read (16 bytes read)
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Created slice Slice /system/getty.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: random: systemd: uninitialized urandom read (16 bytes read)
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Created slice Slice /system/modprobe.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Created slice Slice /system/serial-getty.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Created slice Slice /system/sshd-keygen.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Created slice Slice /system/systemd-fsck.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Created slice User and Session Slice.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Stopped target Switch Root.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Stopped target Initrd File Systems.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Stopped target Initrd Root File System.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Reached target Path Units.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Reached target Slice Units.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Reached target Swaps.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on Device-mapper event daemon FIFOs.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on LVM2 poll daemon socket.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on RPCbind Server Activation Socket.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Reached target RPC Port Mapper.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on Process Core Dump Socket.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on initctl Compatibility Named Pipe.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on udev Control Socket.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Listening on udev Kernel Socket.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Mounting Huge Pages File System...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Mounting POSIX Message Queue File System...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Mounting Kernel Debug File System...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Mounting Kernel Trace File System...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: tmp.mount: Directory /tmp to mount over is not empty, mounting anyway.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Mounting Temporary Directory /tmp...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Create List of Static Device Nodes...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting "Apply kpatch kernel patches"...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting insert ksecurec module before mount disk...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Load Kernel Module configfs...
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: ksecurec: loading out-of-tree module taints kernel.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: Secure C module init
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Load Kernel Module drm...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Load Kernel Module fuse...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Stopped Journal Service.
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Journal Service...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Load Kernel Modules...
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: fuse: init (API version 7.33)
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Remount Root and Kernel File Systems...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Starting Coldplug All udev Devices...
+Sep 21 00:01:54 ecs-kunpeng0607 systemd[1]: Started Journal Service.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: EXT4-fs (vda2): re-mounted 29b25f20-2d4b-4e9f-a2d9-75dc0744cddf r/w. Opts: (null)
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: random: crng init done
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: random: 172 urandom warning(s) missed due to ratelimiting
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: RPC: Registered named UNIX socket transport module.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: RPC: Registered udp transport module.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: RPC: Registered tcp transport module.
+Sep 21 00:01:54 ecs-kunpeng0607 kernel: RPC: Registered tcp NFSv4.1 backchannel transport module.
+Sep 21 00:01:56 ecs-kunpeng0607 kernel: VFS: Open an exclusive opened block device for write vda2. current [2092 resize2fs]. parent [1659 cloud-init]
+Sep 21 00:01:56 ecs-kunpeng0607 kernel: kexec: kexec_load: secureboot mode disabled
+Sep 21 00:03:17 ecs-kunpeng0607 kernel: valarm: module verification failed: signature and/or required key missing - tainting kernel
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: valarm0: irq_alloc_descs(NULL owner) failed: -22, IRQ diagnostic disabled
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: valarm0: virq=-1 refs=1
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d9476b000 virq=-1
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: valarm1: irq_alloc_descs(NULL owner) failed: -22, IRQ diagnostic disabled
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: valarm1: virq=-1 refs=1
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d954e5000 virq=-1
+Sep 21 00:09:27 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:15:11 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d428ac000
+Sep 21 00:15:11 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d522c3000
+Sep 21 00:15:11 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:15:13 ecs-kunpeng0607 kernel: sched: RT throttling activated cpu 1 task 6835 alarmd
+Sep 21 00:17:44 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d954cf000
+Sep 21 00:17:44 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d45a9c000
+Sep 21 00:17:44 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:18:01 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d94700000
+Sep 21 00:18:01 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d50fef000
+Sep 21 00:18:01 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:21:11 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d95c7d000
+Sep 21 00:21:11 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d50f69000
+Sep 21 00:21:11 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:23:34 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8ef837d000
+Sep 21 00:23:34 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d954f5000
+Sep 21 00:23:34 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:27:44 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8ef75d4000
+Sep 21 00:27:44 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d4434a000
+Sep 21 00:27:44 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 00:33:12 ecs-kunpeng0607 kernel: valarm: timestamp domain = CLOCK_MONOTONIC_RAW (ktime_get_raw_ns)
+Sep 21 00:33:12 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d427b2000
+Sep 21 00:33:12 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8ef8387000
+Sep 21 00:33:12 ecs-kunpeng0607 kernel: valarm: init done, refs = 1
+Sep 21 08:33:08 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45810 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:08 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45811 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK URGP=0 
+Sep 21 08:33:08 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=60 TOS=0x14 PREC=0x00 TTL=48 ID=58040 DF PROTO=TCP SPT=33674 DPT=22 WINDOW=64240 RES=0x00 SYN URGP=0 
+Sep 21 08:33:08 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=64 TOS=0x14 PREC=0x00 TTL=49 ID=45812 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK URGP=0 
+Sep 21 08:33:09 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45813 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:09 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=64 TOS=0x14 PREC=0x00 TTL=49 ID=45814 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK URGP=0 
+Sep 21 08:33:09 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45815 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:09 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=64 TOS=0x14 PREC=0x00 TTL=49 ID=45816 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK URGP=0 
+Sep 21 08:33:09 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45817 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:10 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=64 TOS=0x14 PREC=0x00 TTL=49 ID=45818 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK URGP=0 
+Sep 21 08:33:10 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45819 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:12 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=64 TOS=0x14 PREC=0x00 TTL=49 ID=45820 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK URGP=0 
+Sep 21 08:33:12 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45821 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:16 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=52 TOS=0x14 PREC=0x00 TTL=49 ID=45822 DF PROTO=TCP SPT=48704 DPT=22 WINDOW=501 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:33:16 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=40 TOS=0x14 PREC=0x00 TTL=48 ID=45246 PROTO=TCP SPT=48704 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:34:04 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=118.31.120.180 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=14916 PROTO=TCP SPT=48704 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:50:22 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=52 TOS=0x08 PREC=0x60 TTL=49 ID=13318 DF PROTO=TCP SPT=46984 DPT=22 WINDOW=490 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:50:22 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=64 TOS=0x08 PREC=0x60 TTL=49 ID=13319 DF PROTO=TCP SPT=46984 DPT=22 WINDOW=490 RES=0x00 ACK URGP=0 
+Sep 21 08:50:28 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=52 TOS=0x08 PREC=0x60 TTL=49 ID=13323 DF PROTO=TCP SPT=46984 DPT=22 WINDOW=490 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:50:30 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=64 TOS=0x08 PREC=0x60 TTL=49 ID=13324 DF PROTO=TCP SPT=46984 DPT=22 WINDOW=490 RES=0x00 ACK URGP=0 
+Sep 21 08:50:36 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=52 TOS=0x08 PREC=0x60 TTL=49 ID=13325 DF PROTO=TCP SPT=46984 DPT=22 WINDOW=490 RES=0x00 ACK FIN URGP=0 
+Sep 21 08:50:40 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=64 TOS=0x08 PREC=0x60 TTL=49 ID=13326 DF PROTO=TCP SPT=46984 DPT=22 WINDOW=490 RES=0x00 ACK URGP=0 
+Sep 21 08:50:40 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=8747 PROTO=TCP SPT=46984 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:50:40 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=61204 PROTO=TCP SPT=46984 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:50:40 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=45917 PROTO=TCP SPT=46984 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:51:39 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=14043 PROTO=TCP SPT=46984 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:51:39 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=12797 PROTO=TCP SPT=46984 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 08:51:39 ecs-kunpeng0607 kernel: sshd_drop: IN=eth0 OUT= MAC=fa:16:3e:75:cd:c1:fa:16:3e:92:75:78:08:00 SRC=1.13.141.93 DST=192.168.0.244 LEN=40 TOS=0x00 PREC=0x00 TTL=191 ID=1623 PROTO=TCP SPT=46984 DPT=22 WINDOW=0 RES=0x00 ACK RST URGP=0 
+Sep 21 16:04:43 ecs-kunpeng0607 kernel: valarm: timestamp domain = CLOCK_MONOTONIC_RAW (ktime_get_raw_ns)
+Sep 21 16:04:43 ecs-kunpeng0607 kernel: misc valarm0: valarm0 ready: regs=ffff3e8d51eac000
+Sep 21 16:04:43 ecs-kunpeng0607 kernel: misc valarm1: valarm1 ready: regs=ffff3e8d430fb000
+Sep 21 16:04:43 ecs-kunpeng0607 kernel: valarm: init done, refs = 1

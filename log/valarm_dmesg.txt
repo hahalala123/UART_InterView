@@ -1,0 +1,34 @@
+[   87.421701] valarm: module verification failed: signature and/or required key missing - tainting kernel
+[  457.142982] valarm0: irq_alloc_descs(NULL owner) failed: -22, IRQ diagnostic disabled
+[  457.142985] valarm0: virq=-1 refs=1
+[  457.143030] misc valarm0: valarm0 ready: regs=ffff3e8d9476b000 virq=-1
+[  457.143032] valarm1: irq_alloc_descs(NULL owner) failed: -22, IRQ diagnostic disabled
+[  457.143033] valarm1: virq=-1 refs=1
+[  457.143051] misc valarm1: valarm1 ready: regs=ffff3e8d954e5000 virq=-1
+[  457.143052] valarm: init done, refs = 1
+[  801.588288] misc valarm0: valarm0 ready: regs=ffff3e8d428ac000
+[  801.588306] misc valarm1: valarm1 ready: regs=ffff3e8d522c3000
+[  801.588307] valarm: init done, refs = 1
+[  953.804428] misc valarm0: valarm0 ready: regs=ffff3e8d954cf000
+[  953.804448] misc valarm1: valarm1 ready: regs=ffff3e8d45a9c000
+[  953.804448] valarm: init done, refs = 1
+[  970.952090] misc valarm0: valarm0 ready: regs=ffff3e8d94700000
+[  970.952110] misc valarm1: valarm1 ready: regs=ffff3e8d50fef000
+[  970.952111] valarm: init done, refs = 1
+[ 1161.096333] misc valarm0: valarm0 ready: regs=ffff3e8d95c7d000
+[ 1161.096355] misc valarm1: valarm1 ready: regs=ffff3e8d50f69000
+[ 1161.096356] valarm: init done, refs = 1
+[ 1304.389720] misc valarm0: valarm0 ready: regs=ffff3e8ef837d000
+[ 1304.389739] misc valarm1: valarm1 ready: regs=ffff3e8d954f5000
+[ 1304.389740] valarm: init done, refs = 1
+[ 1553.749158] misc valarm0: valarm0 ready: regs=ffff3e8ef75d4000
+[ 1553.749177] misc valarm1: valarm1 ready: regs=ffff3e8d4434a000
+[ 1553.749178] valarm: init done, refs = 1
+[ 1881.917728] valarm: timestamp domain = CLOCK_MONOTONIC_RAW (ktime_get_raw_ns)
+[ 1881.917774] misc valarm0: valarm0 ready: regs=ffff3e8d427b2000
+[ 1881.917792] misc valarm1: valarm1 ready: regs=ffff3e8ef8387000
+[ 1881.917793] valarm: init done, refs = 1
+[57769.760869] valarm: timestamp domain = CLOCK_MONOTONIC_RAW (ktime_get_raw_ns)
+[57769.760914] misc valarm0: valarm0 ready: regs=ffff3e8d51eac000
+[57769.760937] misc valarm1: valarm1 ready: regs=ffff3e8d430fb000
+[57769.760938] valarm: init done, refs = 1
